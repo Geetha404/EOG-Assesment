@@ -28,6 +28,8 @@ function* watchWeatherIdReceived(action) {
   yield put({ type: actions.WEATHER_DATA_RECEIVED, data });
 }
 
+
+
 function* watchFetchWeather(action) {
   const { latitude, longitude } = action;
   const { error, data } = yield call(

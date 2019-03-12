@@ -17,7 +17,9 @@ const Chip = withStyles(cardStyles)(ChipRaw);
 
 class Weather extends Component {
   componentDidMount() {
+    //console.log('weather cdm');
     this.props.onLoad();
+    this.props.onLoad1();
   }
   render() {
     const {
@@ -56,7 +58,13 @@ const mapDispatch = dispatch => ({
       type: actions.FETCH_WEATHER,
       longitude: -95.3698,
       latitude: 29.7604
-    })
+    }),
+  onLoad1: () =>
+    dispatch({
+      type: actions.METRIC_DATA_RECEIVED,
+      longitude: -95.3698,
+      latitude: 29.7604
+    }),
 });
 
 export default connect(

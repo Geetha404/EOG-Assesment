@@ -8,6 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 import NowWhat from "./components/NowWhat";
+import Weather from  "./components/Weather";
+import MapContainer from "./components/MapContainer";
+import PlotContainer from "./components/PlotContainer";
+
 
 const store = createStore();
 const theme = createMuiTheme({
@@ -24,7 +28,7 @@ const theme = createMuiTheme({
     background: {
       main: "rgb(226,231,238)"
     }
-  }
+  } 
 });
 
 const App = props => (
@@ -33,8 +37,10 @@ const App = props => (
     <Provider store={store}>
       <Wrapper>
         <Header />
-        <NowWhat />
+
         <ToastContainer />
+        <div><PlotContainer /></div>
+        <div><MapContainer /></div>
       </Wrapper>
     </Provider>
   </MuiThemeProvider>
